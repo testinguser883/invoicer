@@ -84,7 +84,7 @@ sed "s/POSTGRESPASSREPLACEME/$dbpass/" ebs-options.json > tmp/$identifier/ebs-op
 sed -i "s/POSTGRESHOSTREPLACEME/$dbhost/" tmp/$identifier/ebs-options.json || fail
 aws elasticbeanstalk create-environment \
     --application-name $identifier \
-    --environment-name $identifier-invoicer-api \
+    --environment-name invoicer-api \
     --description "Invoicer API environment" \
     --tags "Key=Owner,Value=$(whoami)" \
     --solution-stack-name "$dockerstack" \

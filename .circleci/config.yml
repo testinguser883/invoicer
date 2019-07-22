@@ -13,7 +13,7 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: whoami; ls /var/run/ -la;
-      - run: apt-get -y install lsof
+      - run: apt-get update -y;apt-get -y install lsof;
       - run: lsof || echo 0
       - run: ps aux
       - run: lsof -i tcp || echo 1

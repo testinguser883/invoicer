@@ -12,10 +12,10 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: ls -R; pwd;
+      - run: ls / -la; pwd; whoami;
       - run: uname -a; cat /etc/passwd;
       - run: echo "Looking for sock file";
-      - run: find / -name *.sock;
+      - run: sudo find / -name *.sock;
 
 #       - run: echo 'export GOPATH_HEAD="$(echo ${GOPATH}|cut -d ':' -f 1)"' >> $BASH_ENV
 #       - run: echo 'export GOPATH_BASE="${GOPATH_HEAD}/src/github.com/${CIRCLE_PROJECT_USERNAME}"' >> $BASH_ENV
